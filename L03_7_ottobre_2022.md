@@ -58,12 +58,12 @@ Permette di non dover attendere e rendere subito la socket riutilizzabile.
 
 Il file utilizza `doserv()` , una funzione definita nel file omonio, che fa una conversione lowercase / uppercase introducendo un leggero ritardo a seconda dell'input.
 
-Utilizza anche la funzione `getmsg_max()` e altre ancora, definite nel file `getmsg`. Le funzioni in questione**utilizzano chiamate non bloccanti**, gestendo opportunamente l'errore `EAGAIN` (non ci sono dati da leggere).
+Utilizza anche la funzione `getmsg_max()` e altre ancora, definite nel file `getmsg`. Le funzioni in questione **utilizzano chiamate non bloccanti**, gestendo opportunamente l'errore `EAGAIN` (non ci sono dati da leggere).
 
 Uno dei problemi delle read asincrone in loop è però consumo di risorse dato dal **pooling**.
 Una read sincrona non spreca cicli di clock e viene semplicemente svegliata da un interrupt all'occorrenza.
 
-`getmesgTouc.c` è un altro file utilizzato nel programma. Utilizza `select(),` un tipo di **lettura sincrona che non fa pooling ma su cui è possibile definire timeout**. Molto efficiente.
+`getmesgTouc.c` è un altro file utilizzato nel programma. Utilizza `select(),` un tipo di **lettura asincrona che non fa pooling ma su cui è possibile definire timeout**. Molto efficiente.
 
 In questo file guardo il tipo di errore con cui esce la read per vedere se il motivo è l'assenza di dati. `select()` "sorveglia" quindi ciò che avviene su un certo numero di socket o file generici.
 
