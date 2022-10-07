@@ -44,7 +44,7 @@ Tipicamente i file che rappresentano le socket vengono messi nella directory `tm
 
 Indirizzando le socket al loopback è possibile far parlare due processi attraverso la rete a senza effettivamente andare su internet.
 
-## Note su inclnt.c e insrvr.c
+## Note su `inclnt.c` e `insrvr.c`
 
 Molto simili a `unclnt` e `unsrvr` ma **comunicano attraverso le interfacce di rete**.
 
@@ -77,9 +77,9 @@ Il tipo `fd_set` è utilizzato per gli **insiemi di file descriptor**. Usiamo le
 
 `select()` ritorna:
 
-- -1 in caso di errore
-- 0 se ci sono 0 descrittori su cui ci sono stati eventi, quindi c'è stato un timeout (assenza di eventi)
-- \> 0 è il numero di eventi accaduti
+- **-1** in caso di errore
+- **0** se ci sono 0 descrittori su cui ci sono stati eventi, quindi c'è stato un timeout (assenza di eventi)
+- **\> 0** è il numero di eventi accaduti
 
 La macro `FD_ISSET` ritorna true se la socket indicata come primo parametro fa parte dell'insieme dei descrittori passato come secondo parametro.
 
