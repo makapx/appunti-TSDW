@@ -124,7 +124,7 @@ finger smith@directory.mit.edu
 
 finger è un client che serve per parlare con gli altri servizi finger. Ad oggi non è più molto utilizzato a causa della cattiva fama dovuta ad un vecchio [worm che colpiva i server finger](https://it.wikipedia.org/wiki/Morris_worm).
 
-### Note sul codice sorgente di fingerc
+### Note sul codice sorgente di `fingerc`
 
 ```bash
 # da una buona overview sulle stringhe "letti tot bytes" tornate da fingerc, è anche possibile usare regex
